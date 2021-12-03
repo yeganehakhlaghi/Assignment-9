@@ -89,9 +89,9 @@ def Voice1(message):
     txt=bot.send_message(message.chat.id,'متنتو به انگلیسی وارد کن')
     bot.register_next_step_handler(txt,Voice2)
 def Voice2(txt):
-    txt=txt.text
+    Vtxt=txt.text
     language='en'
-    vic=gTTS(text=txt,lang=language,slow=False)
+    vic=gTTS(text=Vtxt,lang=language,slow=False)
     vic.save('vc.mp3')
     voice=open('vc.mp3','rb')
     bot.send_voice(txt.chat.id,voice)
